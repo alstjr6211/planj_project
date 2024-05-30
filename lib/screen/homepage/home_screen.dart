@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:planj_project/constant/colors.dart';
+import 'package:planj_project/screen/festivalinfopage/festivalInfo_screen.dart';
+import 'package:planj_project/screen/lodginginfopage/lodgingInfo_screen.dart';
 
 import '../../constant/widget.dart';
+import '../trafficinfopage/trafficInfo_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -158,11 +161,54 @@ Widget courseLayout(BuildContext context) {
         borderRadius: BorderRadius.circular(12),
         child: Container(
           color: colorList[index],
-          child: Padding(
-            padding: EdgeInsets.all(24),
-            child: Image.asset(
-              'assets/icons/${imageFileList[index]}',
-              fit: BoxFit.cover,
+          child: GestureDetector(
+            onTap: () {
+              switch (index) {
+                case 0:
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => TrafficInfoScreen()),
+                  );
+                  break;
+                case 1:
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LodginginfoScreen()),
+                  );
+                  break;
+                case 2:
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => FestivalinfoScreen()),
+                  );
+                  break;
+                case 3:
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text("Information"),
+                        content: Text("This is a custom dialog."),
+                        actions: [
+                          TextButton(
+                            child: Text("OK"),
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                  break;
+              }
+            },
+            child: Padding(
+              padding: EdgeInsets.all(24),
+              child: Image.asset(
+                'assets/icons/${imageFileList[index]}',
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ),

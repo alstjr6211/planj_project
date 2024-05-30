@@ -4,8 +4,8 @@ import 'package:planj_project/constant/colors.dart';
 
 import 'package:planj_project/screen/auth/login_screen.dart';
 
-class OnboardingPage extends StatelessWidget {
-  const OnboardingPage({Key? key}) : super(key: key);
+class OnboardingScreen extends StatelessWidget {
+  const OnboardingScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

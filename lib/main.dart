@@ -5,6 +5,7 @@ import 'package:planj_project/screen/auth/login_screen.dart';
 import 'package:planj_project/screen/currentmappage/presentations/home_view.dart';
 import 'package:planj_project/screen/homepage/home_screen.dart';
 import 'package:planj_project/screen/onboardingpage/onboarding_screen.dart';
+import 'package:planj_project/screen/trafficinfopage/trafficInfo_screen.dart';
 import 'package:planj_project/test/testing.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'PlanJ',
-      home: OnboardingPage(),
+      home: TrafficInfoScreen(),
     );
   }
 }
