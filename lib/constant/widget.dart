@@ -76,16 +76,16 @@ Widget customBottomNavigationBar(int selectedIndex, BuildContext context) {
     items: [
       BottomNavigationBarItem(
         icon: SvgPicture.asset(
-          'assets/icons/chattingroomButton.svg',
+          'assets/icons/map.svg',
           color: colorGrey,
           height: bottomNavigationBarItemSize,
         ),
         activeIcon: SvgPicture.asset(
-          'assets/icons/chattingroomButton.svg',
+          'assets/icons/map.svg',
           color: blueStyle_2,
           height: bottomNavigationBarItemSize,
         ),
-        label: '채팅',
+        label: '맵',
       ),
       BottomNavigationBarItem(
         icon: SvgPicture.asset(

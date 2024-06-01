@@ -53,14 +53,22 @@ class _HomeScreenState extends State<HomeScreen> {
                         Row(
                           children: [
                             Text(
-                              "최근엔 [지역] 여행을 검색하셨네요?\n[지역] 여행지를 찾아보시겠습니까?"
+                              "최근엔 [대전] 여행을 검색하셨네요?\n[대전] 여행지를 찾아보시겠습니까?",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24,
+                              ),
                             ),
                           ],
                         ),
                         Row(
                           children: [
                             Text(
-                              "[지역] 근처 여행지 검색 바로가기"
+                              "[대전] 근처 여행지 검색 바로가기",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
                             ),
                           ],
                         ),
@@ -69,7 +77,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Text("다른 지역 검색하기"),
+                        Text("다른 지역 검색하기",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
                         Icon(
                           Icons.search
                         ),
@@ -173,28 +186,57 @@ Widget courseLayout(BuildContext context) {
                 case 1:
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => LodginginfoScreen()),
+                    MaterialPageRoute(builder: (context) => LodgingInfoScreen()),
                   );
                   break;
                 case 2:
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => FestivalinfoScreen()),
+                    MaterialPageRoute(builder: (context) => FestivalInfoScreen()),
                   );
                   break;
                 case 3:
                   showDialog(
                     context: context,
                     builder: (BuildContext context) {
+                      String mailTitle = '';
+                      String mailContent = '';
+
                       return AlertDialog(
-                        title: Text("Information"),
-                        content: Text("This is a custom dialog."),
-                        actions: [
+                        title: Text('문의하기'),
+                        content: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            TextField(
+                              onChanged: (value) {
+                                mailTitle = value;
+                              },
+                              decoration: InputDecoration(labelText: '메일 제목'),
+                            ),
+                            SizedBox(height: 20),
+                            TextField(
+                              onChanged: (value) {
+                                mailContent = value;
+                              },
+                              decoration: InputDecoration(labelText: '내용'),
+                            ),
+                          ],
+                        ),
+                        actions: <Widget>[
                           TextButton(
-                            child: Text("OK"),
                             onPressed: () {
-                              Navigator.of(context).pop();
+                              Navigator.of(context).pop(); // 다이얼로그 닫기
                             },
+                            child: Text('취소'),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              // 여기에 메일 보내는 로직 추가
+                              // mailTitle과 mailContent를 사용하여 메일을 보내는 함수를 호출하세요.
+
+                              Navigator.of(context).pop(); // 다이얼로그 닫기
+                            },
+                            child: Text('보내기'),
                           ),
                         ],
                       );

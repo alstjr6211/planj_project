@@ -42,7 +42,7 @@ class _SettingScreenState extends State<SettingScreen> {
                         CupertinoSwitch(value: false, onChanged: (value) {})),
                     const _CustomListTile(
                         title: "알림 설정",
-                        icon: CupertinoIcons.cloud_download),
+                        icon: CupertinoIcons.alarm),
                     const _CustomListTile(
                         title: "어플리케이션 정보",
                         icon: CupertinoIcons.lock_shield),
@@ -54,11 +54,9 @@ class _SettingScreenState extends State<SettingScreen> {
                     const _CustomListTile(
                         title: "오픈소스 라이센스",
                         icon: Icons.sd_card_outlined),
-                    _CustomListTile(
-                      title: "버전 V 1.0",
-                      icon: CupertinoIcons.wifi,
-                      trailing: CupertinoSwitch(value: true, onChanged: (val) {}),
-                    ),
+                    const _CustomListTile(
+                        title: "버전 V 1.0",
+                        icon: CupertinoIcons.settings),
                   ],
                 ),
                 const _SingleSection(
@@ -69,7 +67,7 @@ class _SettingScreenState extends State<SettingScreen> {
                     _CustomListTile(
                         title: "개인정보 처리방침", icon: CupertinoIcons.lock),
                     _CustomListTile(
-                        title: "위치기반 서비스 이용약관", icon: CupertinoIcons.brightness),
+                        title: "위치기반 서비스 이용약관", icon: CupertinoIcons.map),
                     _CustomListTile(
                         title: "앱 지원",
                         icon: CupertinoIcons.speaker_2),

@@ -61,18 +61,18 @@ class LocationService {
 
 
     final result = await httpService.get(url: url);
-         if (result.success) {
-           final data = result.data['results'] as List;
+    if (result.success) {
+      final data = result.data['results'] as List;
 
-           List<PredictionPlaceModel> predictions = [];
-           data
-               .map((json) => predictions.add(PredictionPlaceModel.fromJson(json)))
-               .toList();
-           return NetworkResponse.success(
-             data: predictions,
-             message: result.message,
-           );
-         }
-         return result;
+      List<PredictionPlaceModel> predictions = [];
+      data
+          .map((json) => predictions.add(PredictionPlaceModel.fromJson(json)))
+          .toList();
+      return NetworkResponse.success(
+        data: predictions,
+        message: result.message,
+      );
+    }
+    return result;
   }
 }

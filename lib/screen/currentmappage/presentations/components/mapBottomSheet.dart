@@ -32,9 +32,9 @@ class MapBottomSheet extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           // 여행지 카드들을 여기에 추가합니다.
-          PlaceCard(name: 'Place 1', distance: 2.5),
-          PlaceCard(name: 'Place 2', distance: 3.8),
-          PlaceCard(name: 'Place 3', distance: 1.2),
+          PlaceCard(name: '한밭대학교', distance: 8.8),
+          PlaceCard(name: '대전 신세계백화점', distance: 3.8),
+          PlaceCard(name: 'Place 3', distance: 5.0),
         ],
       ),
     );
